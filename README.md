@@ -4,10 +4,12 @@
 - 🌱 I’m currently learning Web Development
 - 📫 How to reach me: felipe.oliveira1496@gmail.com
 
+##
+
  <div>
   <a href="https://github.com/Felipe1496">
-  <img height="178em" src="https://github-readme-stats.vercel.app/api?username=Felipe1496&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-  <img height="176em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Felipe1496&layout=compact&langs_count=7&theme=dracula"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Felipe1496&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+  <img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Felipe1496&layout=compact&langs_count=7&theme=dracula"/>
 </div>
   
 ##
