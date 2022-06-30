@@ -26,7 +26,7 @@ export const Container = styled.div<ContainerProps>`
 
     transition: opacity 0.6s;
 
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: var(--green);
     border-radius: 20%;
     cursor: pointer;
