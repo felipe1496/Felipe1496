@@ -20,7 +20,7 @@ export default function Contact() {
     AOS.init({ duration: 2000 });
   });
 
-  const form = React.useRef() as React.MutableRefObject<HTMLFormElement>;
+  const form = useRef() as React.MutableRefObject<HTMLFormElement>;
 
   const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     setLoadingEmailSending(true);
