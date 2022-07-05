@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Contact from "../../components/Contact";
 import Landing from "../../components/Landing";

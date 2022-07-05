@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Container, ProgressBar, Completed } from "./styles";
 
 interface StackIconProps {

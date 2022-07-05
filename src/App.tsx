@@ -1,3 +1,4 @@
+import React from "react";
 import Portifolio from "./pages/Portifolio";
 import GlobalStyles from "./styles/GlobalStyles";
 

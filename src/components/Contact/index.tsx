@@ -1,3 +1,5 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,25 +11,38 @@ import {
   SenderInfo,
   MessageInfo,
 } from "./styles";
+import { CircleNotch } from "phosphor-react";
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [mail, setMail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [loadingEmailSending, setLoadingEmailSending] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
   });
 
-  const handleSubmit = () => {
-    console.log({
-      name,
-      mail,
-      phone,
-      message
-    })
-  }
+  const form = React.useRef() as React.MutableRefObject<HTMLFormElement>;
+
+  const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
+    setLoadingEmailSending(true);
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        "service_dtn8p1c",
+        "template_o4acihm",
+        form.current,
+        "3-ZqjkpEvTRbymo5q"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setLoadingEmailSending(false);
+        },
+        (error) => {
+          console.log(error.text);
+          setLoadingEmailSending(false);
+        }
+      );
+  };
 
   return (
     <Container id="contact">
@@ -37,27 +52,43 @@ export default function Contact() {
       </h1>
       <ContactContainer>
         <MessageContainer>
-          <form id="messageForm" onSubmit={(event) => {
-            event.preventDefault()
-            handleSubmit()
-          }}>
+          <form ref={form} id="messageForm" onSubmit={sendEmail}>
             <SenderInfo>
               <label>Your Name</label>
-              <input type="text" onChange={(event) => setName(event.target.value)} />
+              <input type="text" name="name" required />
 
               <label>Mail</label>
-              <input type="text" onChange={(event) => setMail(event.target.value)} />
+              <input type="text" name="email" required />
 
               <label>Phone</label>
-              <input type="tel" onChange={(event) => setPhone(event.target.value)} />
+              <input type="tel" name="phone" />
             </SenderInfo>
             <MessageInfo>
               <label>Message</label>
-              <textarea onChange={(event) => setMessage(event.target.value)} />
+              <textarea name="message" required />
             </MessageInfo>
           </form>
-          <button type="submit" form="messageForm">
-            Submit
+          <button type="submit" value="Send" form="messageForm">
+            {loadingEmailSending ? (
+              <CircleNotch size={18} color="#ffffff">
+                <animate
+                  values="0;1;0"
+                  dur="4s"
+                  repeatCount="indefinite"
+                ></animate>
+                <animateTransform
+                  attributeName="transform"
+                  attributeType="XML"
+                  type="rotate"
+                  dur="1s"
+                  from="0 0 0"
+                  to="360 0 0"
+                  repeatCount="indefinite"
+                ></animateTransform>
+              </CircleNotch>
+            ) : (
+              "Submit"
+            )}
           </button>
         </MessageContainer>
       </ContactContainer>

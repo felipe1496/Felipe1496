@@ -81,6 +81,15 @@ export const MessageContainer = styled.div`
     width: 150px;
     height: 40px;
   }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const SenderInfo = styled.div`
