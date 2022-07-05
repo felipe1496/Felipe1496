@@ -19,7 +19,7 @@ const stackInfo = [
     name: "CSS",
     imageUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    progress: "80%",
+    progress: "92%",
     barColor: "#33A9DC",
     href: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
   },
