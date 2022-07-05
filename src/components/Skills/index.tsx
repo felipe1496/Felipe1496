@@ -59,7 +59,7 @@ const stackInfo = [
     name: "Git",
     imageUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    progress: "75%",
+    progress: "93%",
     barColor: "#F34F29",
     href: "https://git-scm.com/doc",
   },
