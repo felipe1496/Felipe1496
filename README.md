@@ -2,7 +2,7 @@
 
 - 📚 I’m currently Studying at Federal University of Campina Grande
 - 🌱 I’m currently learning Web Development
-- 💼 Working at CodeX
+- 💼 Working at Information Systems Laboratory
 - 📫 How to reach me: felipe.oliveira1496@gmail.com
 
 ##
